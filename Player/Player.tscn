@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://bch4jby3x5dvs"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_o7f71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2k2hn"]
+radius = 76.99
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sj0wx"]
+load_path = "res://.godot/imported/Sprite-0001.png-38b6b5731edb6062f1e3375b5001218d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_prob7"]
+load_path = "res://.godot/imported/Sprite-0002.png-394e8f53918be7178030de2f8da7a625.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_twp7v"]
+load_path = "res://.godot/imported/Sprite-0003.png-8117643502a85bce18a1f05e789b4376.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1e8xa"]
+load_path = "res://.godot/imported/Sprite-0004.png-7a0f5d8c7b139de190fb8e2ba40475ac.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5v0hg"]
+load_path = "res://.godot/imported/Sprite-0005.png-d92704f4ba7341f0a27ac051d1f772d5.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vmjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_sj0wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_prob7")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_twp7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_1e8xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_5v0hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_twp7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_prob7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_sj0wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_prob7")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_twp7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_1e8xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_5v0hg")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Run",
+"speed": 4.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_o7f71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(780, 366)
+scale = Vector2(1.12777, 1.24359)
+shape = SubResource("CircleShape2D_2k2hn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(782.069, 378.203)
+scale = Vector2(18.8793, 15.8252)
+sprite_frames = SubResource("SpriteFrames_6vmjr")
+animation = &"Run"
+frame_progress = 0.700824
